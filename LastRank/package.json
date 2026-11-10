@@ -1,0 +1,19 @@
+{
+  "name": "last-rank",
+  "version": "0.2.0",
+  "private": true,
+  "description": "LAST RANK · 国际象棋主题 3D 体素塔防肉鸽原型（北方绝境 × 王权陨落 × Into the Breach）",
+  "scripts": {
+    "sim": "node tools/sim.js",
+    "test": "node tools/shot3d.js",
+    "shots": "node tools/shot3d.js",
+    "probe": "node tools/probe3d.js",
+    "diag": "node tools/diag3d.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0"
+  },
+  "dependencies": {
+    "three": "0.140.0"
+  }
+}

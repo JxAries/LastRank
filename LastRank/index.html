@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LAST RANK · 最后方阵</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-main">LAST RANK</span>
+      <span class="brand-sub">最后方阵</span>
+    </div>
+    <div class="hud">
+      <div class="stat"><label>地形</label><b id="hud-terrain">—</b></div>
+      <div class="stat"><label>波次</label><b id="hud-wave">1 / 5</b></div>
+      <div class="stat gold"><label>金币</label><b id="hud-gold">10</b></div>
+      <div class="stat"><label>节拍</label><b id="hud-clock">—</b></div>
+      <div class="stat"><label>塔</label><b id="hud-towers">1</b></div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <aside class="side">
+
+      <div class="card wavecard">
+        <div class="card-head">
+          <span class="tag" id="wave-tag">布阵阶段</span>
+          <span class="wavename" id="wave-name">兵潮</span>
+        </div>
+        <p class="hint" id="wave-hint">黑兵只会直着往下走，正面用兵堵住它就行。</p>
+        <div class="enemy-preview" id="enemy-preview"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">军械库 <span class="muted">点选后放到战场</span></div>
+        <div class="shop" id="shop"></div>
+      </div>
+
+      <button class="primary" id="btn-start">开始第 1 波</button>
+
+      <div class="row">
+        <button class="ghost" id="btn-speed">速度 1×</button>
+        <button class="ghost" id="btn-restart">重新开始</button>
+      </div>
+
+      <div class="seg" id="diffs"></div>
+
+      <div class="card" id="relic-card" hidden>
+        <div class="card-title">遗物</div>
+        <div class="relics" id="relics"></div>
+      </div>
+
+    </aside>
+
+    <section class="stage">
+      <div class="viewport" id="viewport">
+        <canvas id="gl"></canvas>
+        <div class="vp-top">
+          <span class="chip" id="vp-terrain">地形 · —</span>
+          <span class="chip" id="vp-cam">拖动旋转 · 滚轮缩放</span>
+        </div>
+        <div class="vp-tip" id="vp-tip" hidden></div>
+      </div>
+      <div class="legend">
+        <span><i class="sw sw-you"></i>你的棋子 · 1 血</span>
+        <span><i class="sw sw-foe"></i>黑方 · 有血量</span>
+        <span><i class="sw sw-threat"></i>下一拍会被吃</span>
+        <span><i class="sw sw-block"></i>射线被山挡住</span>
+        <span><i class="sw sw-cover"></i>火力覆盖</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="logbar"><div id="log"></div></footer>
+
+</div>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<script src="vendor/three.min.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/voxel.js"></script>
+<script src="js/render3d.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
